@@ -44,9 +44,9 @@ const TypingEffect = () => {
   }, [charIndex, isErasing, textArray, wordIndex]);
 
   return (
-    <div className="typing-effect ">
-      <h1 className="text-4xl flex justify-center items-center">
-        <span className="hidden">placeholder</span><span>{displayedText}</span>
+    <div className="typing-effect min-h-[2.25rem]">
+      <h1 className="text-4xl flex justify-center items-center ">
+        <span>{displayedText}</span>
       </h1>
     </div>
   );

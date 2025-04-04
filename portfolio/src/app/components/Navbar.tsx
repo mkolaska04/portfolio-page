@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useActiveSection } from "../context/ActiveSectionContext";
 import { Link } from "react-scroll";
 
-const sections = ["home", "about", "services", "contact"];
+const sections = ["home", "about", "projects", "contact"];
 
 export default function Navbar() {
     const { activeSection } = useActiveSection();

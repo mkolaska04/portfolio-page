@@ -61,6 +61,7 @@ body > div:first-child {
 }
 
 .typing-effect span {
+  /* min-height: 2.25rem; */
   border-right: 3px solid #fff; 
   padding-right: 2px;
   animation: blink-caret 0.7s step-end infinite;

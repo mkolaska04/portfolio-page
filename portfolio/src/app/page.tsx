@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { useActiveSection } from './context/ActiveSectionContext';
 import TypingEffect from './components/TypingEffect';
-const sections = ["home", "about", "services", "contact"];
+const sections = ["home", "about", "projects", "contact"];
 
 export default function Home() {
   const { setActiveSection } = useActiveSection();
@@ -33,7 +33,7 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col justify-center items-center my-36">
+    <div className="flex flex-col justify-center items-center my-3 py-2">
       
       <div
         className='flex flex-col justify-center items-center h-screen'
@@ -63,6 +63,7 @@ export default function Home() {
         className="w-full h-screen"
       >
         <h2 className="text-4xl">{sections[1].toUpperCase()}</h2>
+        This and lower sections still during development, so they are empty for now. :)
       </div>
       <div
         id={sections[2]}
