@@ -1,23 +1,24 @@
 'use client'
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim"; 
-import { IOptions, RecursivePartial } from "@tsparticles/engine";
+import { Engine, IOptions, RecursivePartial } from "@tsparticles/engine";
 
 const ParticlesBackground = (props: { id: string | undefined; }) => {
 
-  const [, setInit] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
+    initParticlesEngine(async (engine: Engine) => {
       await loadSlim(engine);
     }).then(() => {
-      setInit(true);
+      setIsInitialized(true); 
+    }).catch((error) => {
+      console.error("Particles engine initialization failed:", error);
     });
+  }, []); 
+  const particlesLoaded = useCallback(async () => {
+    await Promise.resolve(); 
   }, []);
-
-  const particlesLoaded = (container: unknown) => {
-    console.log(container);
-  };
 
 
   const options: RecursivePartial<IOptions> = useMemo(
@@ -42,8 +43,8 @@ const ParticlesBackground = (props: { id: string | undefined; }) => {
             parallax: { enable: false, force: 2, smooth: 10 },
           },
           resize: {
-            enable: true,  // Enable or disable the resize event
-            delay: 0.5,    // Delay between resize events in seconds
+            enable: true,  
+            delay: 0.5,    
           },
         },
         modes: {
@@ -97,7 +98,18 @@ const ParticlesBackground = (props: { id: string | undefined; }) => {
   
 
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} className="z-[-1]"/>; 
+  if (!isInitialized) {
+    return null; 
+  }
+
+  return (
+    <Particles
+      className="z-[-1]"
+      id={props.id || "tsparticles"} 
+      options={options}
+      particlesLoaded={particlesLoaded} 
+    />
+  );
 };
 
 export default ParticlesBackground;
