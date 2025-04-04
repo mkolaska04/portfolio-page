@@ -54,7 +54,7 @@ export default function RootLayout({
 
         <div className="relative z-10 flex flex-col min-h-full ">
           <ActiveSectionProvider >
-              <ParticlesBackground />
+              <ParticlesBackground id={undefined} />
               <Navbar />
               <main className="flex-grow roboto-one-regular text-white">{children}</main>
               <Footer />
