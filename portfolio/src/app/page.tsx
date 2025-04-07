@@ -77,7 +77,7 @@ export default function Home() {
         className="w-full my-16"
       >
         <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">Projects</h2>
-        Currently Links don't work, i put them only for illustration purposes. I will add them later :&#41;
+        Currently Links don&apos;t work, i put them only for illustration purposes. I will add them later :&#41;
         <div className="flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-4">
    
           <ProjectTile project={{ title: "Project 1", description: "Description of project 1", links: [{ name: "Link 1", url: "#" }] }} />
