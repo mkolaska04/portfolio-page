@@ -5,6 +5,7 @@ import { useActiveSection } from './context/ActiveSectionContext';
 import TypingEffect from './components/TypingEffect';
 import ContactForm from './components/ContactForm';
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
+import ProjectTile from './components/ProjectTile';
 
 const sections = ["home", "about", "projects", "contact"];
 
@@ -45,7 +46,7 @@ export default function Home() {
           sectionRefs.current[sections[0]] = el;
         }}
       >
-        <h1 className="  font-roboto text-4xl">
+        <h1 className="text-4xl align-center text-center">
           Hello, I&apos;m <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF]">Martyna Kolaska</span>, but you can call me <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF]">Catsenni</span>
         </h1>
         <Image
@@ -65,7 +66,7 @@ export default function Home() {
         }}
         className="w-full my-16"
       >
-        <h2 className="text-4xl">{sections[1].toUpperCase()}</h2>
+        <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">About me</h2>
         This and Projects section still during development, so they are empty for now :&#41;
       </div>
       <div
@@ -75,7 +76,14 @@ export default function Home() {
         }}
         className="w-full my-16"
       >
-        <h2 className="text-4xl">{sections[2].toUpperCase()}</h2>
+        <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">Projects</h2>
+        Currently Links don't work, i put them only for illustration purposes. I will add them later :&#41;
+        <div className="flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-4">
+   
+          <ProjectTile project={{ title: "Project 1", description: "Description of project 1", links: [{ name: "Link 1", url: "#" }] }} />
+          <ProjectTile project={{ title: "Project 2", description: "Description of project 2", links: [{ name: "Link 1", url: "#" }, { name: "Link 2", url: "#" }] }} />
+          <ProjectTile project={{ title: "Project 3", description: "Description of project 3 ", links: [{ name: "Link 1", url: "#" }] }} />
+          </div>
       </div>
       <div
         id={sections[3]}
@@ -87,7 +95,7 @@ export default function Home() {
 
         <div className=" bg-box md:w-4/5 lg:w-3/5 w-full flex flex-col justify-center items-center my-16 rounded-lg shadow-lg p-4 mb-2 md:mb-16 max-w-7xl">
           <div className="w-full">
-            <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4">Contact me</h2>
+            <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">Contact me</h2>
           </div>
           <div className="w-full flex flex-col justify-between items-start lg:flex-row">
           <div className="left lg:w-1/2 ">
