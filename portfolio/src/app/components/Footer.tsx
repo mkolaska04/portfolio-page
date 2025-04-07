@@ -1,4 +1,4 @@
-import { FaGithub, FaTwitter, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -18,17 +18,14 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                    <a href="#" className="text-[#543568] hover:text-[#EF6FDE]">
+                    <a href="https://github.com/mkolaska04" className="text-[#543568] hover:text-[#EF6FDE]">
                         <FaGithub className="w-5 h-5" />
                         <span className="sr-only">GitHub</span>
                     </a>
-                    <a href="#" className="text-[#543568] hover:text-[#EF6FDE]">
-                        <FaTwitter className="w-5 h-5" />
-                    </a>
-                    <a href="#" className="text-[#543568] hover:text-[#EF6FDE]">
+                    <a href="https://www.linkedin.com/in/martyna-kolaska-7140572b3/" className="text-[#543568] hover:text-[#EF6FDE]">
                         <FaLinkedin className="w-5 h-5" />
                     </a>
-                    <a href="#" className="text-[#543568] hover:text-[#EF6FDE]">
+                    <a href="https://discord.com/users/430662565266325505"  className="text-[#543568] hover:text-[#EF6FDE]">
                         <FaDiscord className="w-5 h-5" />
                     </a>
                 </div>
