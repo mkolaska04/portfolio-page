@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node_modules/.bin/next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -36,8 +36,7 @@
     "typescript": "^5"
   },
   "engines": {
-  "node": ">=18",
-  "npm": ">=9"
-}
-
+    "node": ">=18",
+    "npm": ">=9"
+  }
 }
