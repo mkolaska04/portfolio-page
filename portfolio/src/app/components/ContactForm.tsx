@@ -43,7 +43,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className=" w-full p-4 lg:w-1/2">
+    <div className=" w-full p-4 lg:w-1/2 ">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -51,6 +51,7 @@ export default function ContactForm() {
       >
         {({ isSubmitting }) => (
           <Form className="flex flex-col space-y-4">
+            <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-xl lg:text-2xl">Contact form</h2>
             <div>
               <label htmlFor="name" className="block font-medium">Name</label>
               <Field
