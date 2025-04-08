@@ -26,13 +26,6 @@ export async function POST(request) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
         <hr />
-        <p><strong>IP:</strong> ${request.headers.get("x-forwarded-for") || request.headers.get("remote-addr")}</p>
-        <p><strong>User Agent:</strong> ${request.headers.get("user-agent")}</p>
-        <p><strong>Referrer:</strong> ${request.headers.get("referer")}</p>
-        <p><strong>Request URL:</strong> ${request.url}</p>
-        <p><strong>Request Method:</strong> ${request.method}</p>
-        <p><strong>Request Headers:</strong><pre>${JSON.stringify(Object.fromEntries(request.headers.entries()), null, 2)}</pre></p>
-        <p><strong>Request Body:</strong><pre>${JSON.stringify(body, null, 2)}</pre></p>
         <p><strong>Request Time:</strong> ${new Date().toISOString()}</p>
       `,
     };
