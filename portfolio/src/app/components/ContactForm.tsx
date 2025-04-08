@@ -2,6 +2,10 @@
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import StatefulButton from "./StatefulButton";
+import { useState } from "react";
+import SuccessToast from "./SuccessToast"
+
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -11,6 +15,8 @@ const validationSchema = Yup.object({
 
 export default function ContactForm() {
   const initialValues = { name: "", email: "", message: "" };
+  const [showToast, setShowToast] = useState(false);
+
 
   const handleSubmit = async (
     values: { name: string; email: string; message: string },
@@ -31,8 +37,9 @@ export default function ContactForm() {
       } else {
         const data = JSON.parse(rawText);
         console.log("Message sent:", data.message);
-        alert("Your message has been sent!");
         resetForm();
+        setShowToast(true); 
+        setTimeout(() => setShowToast(false), 3000); 
       }
     } catch (error) {
       console.error("Network or parsing error:", error);
@@ -50,6 +57,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
+          <>
           <Form className="flex flex-col space-y-4">
             <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-xl lg:text-2xl">Contact form</h2>
             <div>
@@ -83,14 +91,16 @@ export default function ContactForm() {
               <ErrorMessage name="message" component="div" className="text-red-400 text-sm" />
             </div>
 
-            <button
+            <StatefulButton
               type="submit"
               disabled={isSubmitting}
-              className="bg-gradient-to-r from-[#EF6FDE] activefocus:border-[#84D3FF] via-[#DF84FF] to-[#84D3FF] text-white font-bold py-2 px-4 rounded self-end"
+              className="bg-[#EF6FDE] hover:bg-[#84D3FF] px-4 py-2 rounded self-end"
             >
-              {isSubmitting ? "Sending..." : "Send"}
-            </button>
-          </Form>
+              Send Message
+            </StatefulButton>
+            </Form>
+            <SuccessToast show={showToast} />
+          </>
         )}
       </Formik>
     </div>

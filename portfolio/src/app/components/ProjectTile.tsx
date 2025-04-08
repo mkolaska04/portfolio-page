@@ -18,7 +18,7 @@ export default function ProjectTile({ project }: { project: Project }) {
                     className="rounded-lg my-4"
             
             />
-            <p className=" text-white">{project.description}</p>
+            <p className="">{project.description}</p>
             <div className="flex space-x-4 mt-4">
                 {project.links.map((link: { name: string; url: string }) => (
                     <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[#EF6FDE] hover:text-[#84D3FF]">
