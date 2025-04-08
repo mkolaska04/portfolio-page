@@ -1,7 +1,0 @@
-buildCommand: npm run build
-startCommand: npm run start
-build:
-  env:
-    - key: NODE_ENV
-      value: production
-  NIXPACKS_INSTALL_CMD: "npm install"
