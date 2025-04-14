@@ -7,11 +7,10 @@ import ContactForm from './components/ContactForm';
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import ProjectTile from './components/ProjectTile';
 import FadeInWhenVisible from './components/FadeInWhenVisible';
-import { RiNextjsFill, RiTailwindCssFill  } from "react-icons/ri";
-import { FaReact, FaNode, FaCss3Alt  } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { FaReact, FaNode, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import AboutMeTile from './components/AboutMeTile';
-// css tailwind, js node, react next
 
 const sections = ["home", "about", "projects", "contact"];
 
@@ -28,7 +27,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.5 }
     );
 
     sections.forEach((section) => {
@@ -73,30 +72,31 @@ export default function Home() {
         className="w-full my-16"
       >
         <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">About me</h2>
-        This and Projects section still during development, so they are empty for now :&#41;
-        <div className="flex flex-col items-center justify-center lg:flex-row">
-          <div className="lg:w-1/2">
+        <div className="flex flex-col items-center justify-center lg:flex-row gap-4 lg:gap-8 h-fit lg:items-stretch ">
+          <div className="lg:w-1/3 bg-box p-4 lg:p-8 rounded-lg shadow-lg  max-w-7xl lg:text-lg flex flex-col space-y-4">
             <p> I&apos;m an Entry-level Web Developer with a strong passion for creating beautiful and responsive websites.
             </p>
             <p>Since an early age, I&apos;ve been deeply interested in art and design in all its forms. Discovering frontend development felt like a natural path — a perfect blend of my creative side and my growing love for programming. It allows me to bring ideas to life in a visual, interactive way while staying connected to technology.</p>
             <p>I’m committed to writing clean, efficient code, and I’m always seeking opportunities to improve my skills, stay updated with the latest technologies, and build on my knowledge. Whether it’s through collaboration with other developers or tackling new projects on my own.</p>
           </div>
-          <div className="flex flex-col space-y-4">
-            <FadeInWhenVisible>
-            <AboutMeTile icons={[<IoLogoJavascript key="js" className="text-yellow-300" />, <FaNode key="node" className="text-green-300" />]} text="JavaScript" />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-              <AboutMeTile icons={[<FaCss3Alt key="css3" className="text-blue-300"/>, <RiTailwindCssFill key="tailwind" className="text-blue-200" />]} text="CSS3" />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-            <AboutMeTile icons={[<FaReact key="reactjs" className="text-blue-500" />, <RiNextjsFill key="nextjs" />]} text="ReactJs" />
-            </FadeInWhenVisible>
+          <div>
+            <h3 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-2xl lg:text-4xl p-4 font-bold text-center w-full">Main skills </h3>
+            <div className="relative flex justify-center items-center flex-col ">
+              <div className="neon-line"></div>
+              <div className="flex flex-col space-y-4  ">
 
-            
+                <FadeInWhenVisible>
+                  <AboutMeTile icons={[<IoLogoJavascript key="js" className="text-yellow-300" />, <FaNode key="node" className="text-green-300" />]} text="JavaScript" />
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
+                  <AboutMeTile icons={[<FaCss3Alt key="css3" className="text-blue-300" />, <RiTailwindCssFill key="tailwind" className="text-blue-200" />]} text="CSS3" />
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
+                  <AboutMeTile icons={[<FaReact key="reactjs" className="text-blue-500" />, <RiNextjsFill key="nextjs" />]} text="ReactJs" />
+                </FadeInWhenVisible>
 
-
-
-
+              </div>
+            </div>
           </div>
         </div>
       </div>

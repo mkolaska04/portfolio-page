@@ -24,14 +24,15 @@ html {
   color:var(--font);
   margin: 0;
   padding: 0;
-  width: 100%;
-
+  width: 100;
+  overflow-x: hidden;
   background: linear-gradient(to bottom, #3b2b52, #0c0c1d);
 
   background-repeat: no-repeat;
 
   min-height: 100%;
   height: auto; 
+  scrollbar-width: none;
 
 }
 
@@ -44,7 +45,7 @@ body {
   margin: 0; 
   padding: 0;
   width: 100%;
-
+  overflow-x: hidden;
   min-height: 100%;
   display: flex; 
   flex-direction: column;
@@ -87,3 +88,42 @@ body > div:first-child {
     border-color: transparent;
   }
 }
+
+.neon-line {
+  position: absolute;
+  top: -10;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 110%;
+  background: #EF6FDE; 
+  border-radius: 2px;
+  box-shadow: 
+    0 0 8px #EF6FDE,
+    0 0 20px #EF6FDE,
+    0 0 40px #EF6FDE;
+  transition: box-shadow 0.3s ease;
+  z-index: -1;
+}
+
+.neon-line:hover {
+  box-shadow: 
+    0 0 15px #EF6FDE,
+    0 0 30px #EF6FDE,
+    0 0 60px #EF6FDE;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px #EF6FDE, 0 0 20px #EF6FDE, 0 0 40px #EF6FDE;
+  }
+  50% {
+    box-shadow: 0 0 20px #EF6FDE, 0 0 40px #EF6FDE, 0 0 80px #EF6FDE;
+  }
+}
+
+.neon-line {
+  animation: neonPulse 2s infinite ease-in-out;
+}
+
+

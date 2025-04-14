@@ -104,11 +104,12 @@ const ParticlesBackground = (props: { id: string | undefined; }) => {
 
   return (
     <Particles
-      className="z-[-1]"
-      id={props.id || "tsparticles"} 
-      options={options}
-      particlesLoaded={particlesLoaded} 
-    />
+    className="z-[-1] w-full max-w-full overflow-hidden h-screen absolute top-0 left-0 margin-0"
+    id={props.id || "tsparticles"}
+    options={options}
+    particlesLoaded={particlesLoaded}
+  />
+  
   );
 };
 
