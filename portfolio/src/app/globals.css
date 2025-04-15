@@ -24,7 +24,6 @@ html {
   color:var(--font);
   margin: 0;
   padding: 0;
-  width: 100;
   overflow-x: hidden;
   background: linear-gradient(to bottom, #3b2b52, #0c0c1d);
 
