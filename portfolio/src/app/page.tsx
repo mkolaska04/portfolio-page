@@ -8,9 +8,11 @@ import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
 import ProjectTile from './components/ProjectTile';
 import FadeInWhenVisible from './components/FadeInWhenVisible';
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { FaReact, FaNode, FaCss3Alt } from "react-icons/fa";
+import { FaReact, FaCss3Alt } from "react-icons/fa";
+import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoJavascript } from "react-icons/io5";
 import AboutMeTile from './components/AboutMeTile';
+import { SiTypescript } from "react-icons/si";
 
 const sections = ["home", "about", "projects", "contact"];
 
@@ -86,13 +88,13 @@ export default function Home() {
               <div className="flex flex-col space-y-4  ">
 
                 <FadeInWhenVisible>
-                  <AboutMeTile icons={[<IoLogoJavascript key="js" className="text-yellow-300" />, <FaNode key="node" className="text-green-300" />]} text="JavaScript" />
+                  <AboutMeTile icons={[<IoLogoJavascript key="js" className="text-yellow-300" />, <SiTypescript key="typescript" className="text-blue-400 text-[63px]" />]} text="JavaScript/TypeScript" />
                 </FadeInWhenVisible>
                 <FadeInWhenVisible>
-                  <AboutMeTile icons={[<FaCss3Alt key="css3" className="text-blue-300" />, <RiTailwindCssFill key="tailwind" className="text-blue-200" />]} text="CSS3" />
+                  <AboutMeTile icons={[<FaCss3Alt key="css3" className="text-blue-300" />, <RiTailwindCssFill key="tailwind" className="text-blue-200" />]} text="CSS3/Tailwind" />
                 </FadeInWhenVisible>
                 <FadeInWhenVisible>
-                  <AboutMeTile icons={[<FaReact key="reactjs" className="text-blue-500" />, <RiNextjsFill key="nextjs" />]} text="ReactJs" />
+                  <AboutMeTile icons={[<FaReact key="reactjs" className="text-blue-500" />, <RiNextjsFill key="nextjs" />]} text="ReactJs/Next.js" />
                 </FadeInWhenVisible>
 
               </div>
@@ -108,22 +110,41 @@ export default function Home() {
         className="w-full my-16"
       >
         <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">Projects</h2>
-        Currently Project tiles don&apos;t work, i put them only for illustration purposes. I will add them later :&#41;
-        <div className="flex flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-4">
+
+        <div className="flex flex-col  justify-center space-y-4 lg:flex-row lg:space-x-4">
 
           <FadeInWhenVisible>
             <div className="w-full">
-              <ProjectTile project={{ title: "Project 1", description: "Description of project 1", links: [{ name: "Link 1", url: "#" }] }} />
+              <ProjectTile project={{
+                title: "Aivify", description: `
+              Full-stack web application using Next.js, providing
+              intuitive and dynamic user experience. The application
+              features an interactive flow where user-submitted text is
+              transformed via AI model into structured learning tools:
+              summaries, quizzes, and flashcards. Utilized Tailwind
+              CSS to build a modern, fully responsive design.
+              `
+                , links: [{ name: "Demo", url: "https://aivify-study-helper-app.vercel.app/" }, { name: "Github", url: "https://github.com/mkolaska04/aivify-study-helper-app" }], imageSrc: "/p1.png"
+              }} />
             </div>
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <div className="w-full">
-              <ProjectTile project={{ title: "Project 2", description: "Description of project 2", links: [{ name: "Link 1", url: "#" }, { name: "Link 2", url: "#" }] }} />
+              <ProjectTile project={{
+                title: "Pycoding", description: `
+              Self-hosted full-stack web application that
+              provides an interactive coding practice
+              environment similar to LeetCode—enabling
+              users to solve programming problems, submit
+              solutions, and receive automated evaluation
+              results in sandboxed execution environments.`
+                , links: [{ name: "Github", url: "https://github.com/mkolaska04/PyCoding" }], imageSrc: "/p2.jpeg"
+              }} />
             </div>
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <div className="w-full ">
-              <ProjectTile project={{ title: "Project 3", description: "Description of project 3 ", links: [{ name: "Link 1", url: "#" }] }} />
+              <ProjectTile project={{ title: "CoinCheck", description: "Simple web application for checking cryptocurrency prices in real-time. Users can search for specific cryptocurrencies and view detailed market data with customizable time ranges (1 day to max history).", links: [{ name: "Demo", url: "" }], imageSrc: "/p3.png" }} />
             </div>
           </FadeInWhenVisible>
         </div>
