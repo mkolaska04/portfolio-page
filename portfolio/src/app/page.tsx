@@ -72,7 +72,10 @@ export default function Home() {
         }}
         className="w-full my-16"
       >
-        <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">About me</h2>
+        <div className="flex items-center justify-center mb-8 w-full px-8 gap-4">
+  <h2 className="inline-block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl font-bold align-justify">About me</h2> 
+        <div className="w-full bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] h-2"></div>
+        </div>
         <div className="flex flex-col items-center justify-center lg:flex-row gap-4 lg:gap-8 h-fit lg:items-stretch ">
           <div className="lg:w-1/3 bg-box p-4 lg:p-8 rounded-lg shadow-lg  max-w-7xl lg:text-lg flex flex-col space-y-4">
             <p> I&apos;m an Entry-level Web Developer with a strong passion for creating beautiful and responsive websites.
@@ -108,9 +111,12 @@ export default function Home() {
         }}
         className="w-full my-16"
       >
-        <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl p-4 font-bold">Projects</h2>
+        <div className="flex items-center justify-center mb-8 w-full px-8 gap-4">
+        <h2 className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl font-bold inline-block">Projects</h2> 
+        <div className="w-full bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] h-2"></div>
+        </div>
 
-        <div className="flex flex-col  justify-center space-y-4 lg:flex-row lg:space-x-4">
+        <div className="flex flex-row flex-wrap gap-4 justify-center space-y-4 lg:space-x-4 mx-auto w-[90%]">
 
           <FadeInWhenVisible>
             <div className="w-full">
@@ -148,6 +154,10 @@ export default function Home() {
           </FadeInWhenVisible>
         </div>
       </div>
+      <div className="flex items-center justify-center mb-8 w-full px-8 gap-4">
+  <h2 className="inline-block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] text-4xl lg:text-6xl font-bold align-justify">Contact</h2> 
+        <div className="w-full bg-gradient-to-r from-[#EF6FDE] via-[#DF84FF] to-[#84D3FF] h-2"></div>
+        </div>
       <div
         id={sections[3]}
         ref={(el) => {
