@@ -143,7 +143,7 @@ export default function Home() {
           </FadeInWhenVisible>
           <FadeInWhenVisible>
             <div className="w-full ">
-              <ProjectTile project={{ title: "CoinCheck", description: "Simple web application for checking cryptocurrency prices in real-time. Users can search for specific cryptocurrencies and view detailed market data with customizable time ranges (1 day to max history).", links: [{ name: "Demo", url: "" }], imageSrc: "/p3.png" }} />
+              <ProjectTile project={{ title: "CoinCheck", description: "Simple web application for checking cryptocurrency prices in real-time. Users can search for specific cryptocurrencies and view detailed market data with customizable time ranges (1 day to max history).", links: [{ name: "Demo", url: "https://dashboard-gecko-api-1.onrender.com" }], imageSrc: "/p3.png" }} />
             </div>
           </FadeInWhenVisible>
         </div>
