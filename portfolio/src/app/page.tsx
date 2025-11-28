@@ -9,7 +9,6 @@ import ProjectTile from './components/ProjectTile';
 import FadeInWhenVisible from './components/FadeInWhenVisible';
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaReact, FaCss3Alt } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoJavascript } from "react-icons/io5";
 import AboutMeTile from './components/AboutMeTile';
 import { SiTypescript } from "react-icons/si";
